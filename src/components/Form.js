@@ -10,6 +10,9 @@ export default function Form() {
   // Function to change into uppercase
   const handleUpCase = () => setText(text.toUpperCase());
 
+  // Function to change into lowercase
+  const handleLowCase = () => setText(text.toLowerCase());
+
   return (
     <div className="container my-3">
       <div className="mb-3">
@@ -25,8 +28,11 @@ export default function Form() {
           placeholder="Enter here"
         ></textarea>
       </div>
-      <button onClick={handleUpCase} className="btn btn-primary">
+      <button onClick={handleUpCase} className="m-2 btn btn-primary">
         Upper Case
+      </button>
+      <button onClick={handleLowCase} className="m-2 btn btn-primary">
+        Lower Case
       </button>
     </div>
   );
