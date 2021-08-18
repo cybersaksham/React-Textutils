@@ -19,6 +19,12 @@ export default function Form() {
   // Function to copy text
   const handleCopyText = () => navigator.clipboard.writeText(text);
 
+  // Function to remove extra-spaces
+  const handleExtraSpaces = () => {
+    let newText=text.split(/[ ]+/);
+    setText(newText.join(" ").trim());
+  };
+
   return (
     <div className="container my-3">
       <div className="mb-3">
@@ -45,6 +51,9 @@ export default function Form() {
       </button>
       <button onClick={handleCopyText} className="m-2 btn btn-outline-primary">
         Copy Text
+      </button>
+      <button onClick={handleExtraSpaces} className="m-2 btn btn-outline-primary">
+        Remove White-spaces
       </button>
     </div>
   );
