@@ -16,6 +16,9 @@ export default function Form() {
   // Function to clear text
   const handleClearText = () => setText("");
 
+  // Function to copy text
+  const handleCopyText = () => navigator.clipboard.writeText(text);
+
   return (
     <div className="container my-3">
       <div className="mb-3">
@@ -39,6 +42,9 @@ export default function Form() {
       </button>
       <button onClick={handleClearText} className="m-2 btn btn-primary">
         Clear Text
+      </button>
+      <button onClick={handleCopyText} className="m-2 btn btn-primary">
+        Copy Text
       </button>
     </div>
   );
