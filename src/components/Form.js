@@ -13,6 +13,9 @@ export default function Form() {
   // Function to change into lowercase
   const handleLowCase = () => setText(text.toLowerCase());
 
+  // Function to clear text
+  const handleClearText = () => setText("");
+
   return (
     <div className="container my-3">
       <div className="mb-3">
@@ -33,6 +36,9 @@ export default function Form() {
       </button>
       <button onClick={handleLowCase} className="m-2 btn btn-primary">
         Lower Case
+      </button>
+      <button onClick={handleClearText} className="m-2 btn btn-primary">
+        Clear Text
       </button>
     </div>
   );
