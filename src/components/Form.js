@@ -34,16 +34,16 @@ export default function Form() {
           placeholder="Enter here"
         ></textarea>
       </div>
-      <button onClick={handleUpCase} className="m-2 btn btn-primary">
+      <button onClick={handleUpCase} className="m-2 btn btn-outline-primary">
         Upper Case
       </button>
-      <button onClick={handleLowCase} className="m-2 btn btn-primary">
+      <button onClick={handleLowCase} className="m-2 btn btn-outline-primary">
         Lower Case
       </button>
-      <button onClick={handleClearText} className="m-2 btn btn-primary">
+      <button onClick={handleClearText} className="m-2 btn btn-outline-primary">
         Clear Text
       </button>
-      <button onClick={handleCopyText} className="m-2 btn btn-primary">
+      <button onClick={handleCopyText} className="m-2 btn btn-outline-primary">
         Copy Text
       </button>
     </div>
