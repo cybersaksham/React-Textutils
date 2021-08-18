@@ -59,6 +59,16 @@ export default function Form() {
         Remove White-spaces
       </button>
       <div className="mb-3">
+        <h2>Summary</h2>
+        <hr />
+        <p>
+          {`${text.split(" ").filter((t) => t !== "").length} words & ${
+            text.length
+          } letters`}
+        </p>
+        <p>{`${text.length / 10} seconds required to read`}</p>
+      </div>
+      <div className="mb-3">
         <h2>Preview</h2>
         <hr />
         <p>{text === "" ? "Preview will appear here" : text}</p>
