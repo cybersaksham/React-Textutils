@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Form() {
+export default function Form({ theme }) {
   // Declaring textarea value state
   const [text, setText] = useState("");
 
@@ -38,6 +38,7 @@ export default function Form() {
           id="myText"
           rows="10"
           placeholder="Enter here"
+          style={{ backgroundColor: theme.bg, color: theme.fg }}
         ></textarea>
       </div>
       <button onClick={handleUpCase} className="m-2 btn btn-outline-primary">
