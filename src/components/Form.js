@@ -21,7 +21,7 @@ export default function Form() {
 
   // Function to remove extra-spaces
   const handleExtraSpaces = () => {
-    let newText=text.split(/[ ]+/);
+    let newText = text.split(/[ ]+/);
     setText(newText.join(" ").trim());
   };
 
@@ -52,9 +52,17 @@ export default function Form() {
       <button onClick={handleCopyText} className="m-2 btn btn-outline-primary">
         Copy Text
       </button>
-      <button onClick={handleExtraSpaces} className="m-2 btn btn-outline-primary">
+      <button
+        onClick={handleExtraSpaces}
+        className="m-2 btn btn-outline-primary"
+      >
         Remove White-spaces
       </button>
+      <div className="mb-3">
+        <h2>Preview</h2>
+        <hr />
+        <p>{text === "" ? "Preview will appear here" : text}</p>
+      </div>
     </div>
   );
 }
