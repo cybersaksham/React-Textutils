@@ -2,6 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export default function Navbar(props) {
+  // Function to handle color
+  const handleColor = () => {
+    let colorInput = document.getElementById("themeColor");
+    props.changeColor(colorInput.value);
+    props.toggle();
+  };
+
   return (
     <nav
       className={`navbar navbar-expand-lg navbar-${props.theme.nav_fg} bg-${props.theme.nav_fg}`}
@@ -26,16 +33,17 @@ export default function Navbar(props) {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0"></ul>
           <div className="form-check form-switch">
             <input
-              className="form-check-input"
-              type="checkbox"
-              id="flexSwitchCheckDefault"
-              onClick={props.toggle}
+              type="color"
+              id="themeColor"
+              name="themeColor"
+              onChange={handleColor}
+              value={props.color}
             />
             <label
               className="form-check-label"
               htmlFor="flexSwitchCheckDefault"
             >
-              Night Mode
+              Theme
             </label>
           </div>
         </div>

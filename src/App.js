@@ -8,9 +8,12 @@ function App() {
   const [theme, setTheme] = useState({
     nav: "#eef3f3",
     nav_fg: "light",
-    bg: "white",
+    bg: "#ffffff",
     fg: "black",
   });
+
+  // Color state
+  const [color, setColor] = useState(theme.bg);
 
   // Alert states
   const [alert, setAlert] = useState(null);
@@ -48,27 +51,39 @@ function App() {
         `#navbar {background-color: ${themeObj.nav} !important;}`
       )
     );
+    styleElement.appendChild(
+      document.createTextNode(
+        `.btn {color: ${themeObj.fg} !important; border: 1px solid ${themeObj.fg} !important;}`
+      )
+    );
+    styleElement.appendChild(
+      document.createTextNode(
+        `.btn:hover {background-color: ${themeObj.nav} !important; border: 1px solid ${themeObj.nav} !important;}`
+      )
+    );
   };
   appendStyle(theme);
 
+  // Function to check darkness of background
+  function checkDark(hexcolor) {
+    hexcolor = hexcolor.replace("#", "");
+    var r = parseInt(hexcolor.substr(0, 2), 16);
+    var g = parseInt(hexcolor.substr(2, 2), 16);
+    var b = parseInt(hexcolor.substr(4, 2), 16);
+    var brightness = (r * 299 + g * 587 + b * 114) / 1000;
+    return brightness >= 128 ? "black" : "white";
+  }
+
   // Function to change theme
   const changeTheme = () => {
-    let themeObj = null;
+    let textColor = checkDark(color);
 
-    if (theme.bg === "white")
-      themeObj = {
-        nav: "#1a23389e",
-        nav_fg: "dark",
-        bg: "#080f20",
-        fg: "white",
-      };
-    else
-      themeObj = {
-        nav: "#eef3f3",
-        nav_fg: "light",
-        bg: "white",
-        fg: "black",
-      };
+    let themeObj = {
+      nav: color,
+      nav_fg: textColor === "white" ? "dark" : "light",
+      bg: color + "e0",
+      fg: textColor,
+    };
 
     setTheme(themeObj);
     appendStyle(themeObj);
@@ -76,7 +91,13 @@ function App() {
 
   return (
     <>
-      <Navbar title="TextUtils" theme={theme} toggle={changeTheme} />
+      <Navbar
+        title="TextUtils"
+        theme={theme}
+        toggle={changeTheme}
+        color={color}
+        changeColor={setColor}
+      />
       <Alert alert={alert} />
       <Form theme={theme} showAlert={showAlert} text={text} setText={setText} />
     </>

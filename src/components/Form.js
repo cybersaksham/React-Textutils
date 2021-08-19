@@ -45,30 +45,6 @@ export default function Form({ theme, showAlert, text, setText }) {
     setText(newText);
   };
 
-  // Function to replace text
-  const handleReplace = () => {
-    showModal({
-      title: "Replace text",
-      body: (
-        <form>
-          <div className="mb-3">
-            <label htmlFor="find" className="form-label">
-              Find
-            </label>
-            <input type="text" className="form-control" id="find" />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="replace" className="form-label">
-              Replace
-            </label>
-            <input type="text" className="form-control" id="replace" />
-          </div>
-        </form>
-      ),
-      saveBtn: null,
-    });
-  };
-
   return (
     <div className="container my-3">
       <div className="mb-3">
