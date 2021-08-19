@@ -75,18 +75,24 @@ function App() {
   }
 
   // Function to change theme
-  const changeTheme = () => {
-    let textColor = checkDark(color);
+  const changeTheme = (colorInp) => {
+    let textColor = checkDark(colorInp);
 
     let themeObj = {
-      nav: color,
+      nav: colorInp,
       nav_fg: textColor === "white" ? "dark" : "light",
-      bg: color + "e0",
+      bg: colorInp + "e0",
       fg: textColor,
     };
 
     setTheme(themeObj);
     appendStyle(themeObj);
+  };
+
+  // Function to change color
+  const changeColor = (colorInp) => {
+    setColor(colorInp);
+    changeTheme(colorInp);
   };
 
   return (
@@ -96,7 +102,7 @@ function App() {
         theme={theme}
         toggle={changeTheme}
         color={color}
-        changeColor={setColor}
+        changeColor={changeColor}
       />
       <Alert alert={alert} />
       <Form theme={theme} showAlert={showAlert} text={text} setText={setText} />

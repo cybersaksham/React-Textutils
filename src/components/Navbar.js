@@ -6,7 +6,6 @@ export default function Navbar(props) {
   const handleColor = () => {
     let colorInput = document.getElementById("themeColor");
     props.changeColor(colorInput.value);
-    props.toggle();
   };
 
   return (
