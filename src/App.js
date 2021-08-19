@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Form from "./components/Form";
 import React, { useState } from "react";
+import Alert from "./components/Alert";
 
 function App() {
   // Theme states
@@ -10,6 +11,17 @@ function App() {
     bg: "white",
     fg: "black",
   });
+
+  // Alert states
+  const [alert, setAlert] = useState(null);
+
+  // Function to show alerts
+  const showAlert = (type, msg) => {
+    setAlert({ type: type, msg: msg });
+    setTimeout(() => {
+      setAlert(null);
+    }, 2000);
+  };
 
   // Function to append style
   const appendStyle = (themeObj) => {
@@ -38,7 +50,6 @@ function App() {
 
   // Function to change theme
   const changeTheme = () => {
-    let navbar = document.getElementById("navbar");
     let themeObj = null;
 
     if (theme.bg === "white")
@@ -63,7 +74,8 @@ function App() {
   return (
     <>
       <Navbar title="TextUtils" theme={theme} toggle={changeTheme} />
-      <Form theme={theme} />
+      <Alert alert={alert} />
+      <Form theme={theme} showAlert={showAlert} />
     </>
   );
 }

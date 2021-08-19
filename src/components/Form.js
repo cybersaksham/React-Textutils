@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Form({ theme }) {
+export default function Form({ theme, showAlert }) {
   // Declaring textarea value state
   const [text, setText] = useState("");
 
@@ -8,21 +8,44 @@ export default function Form({ theme }) {
   const handleChangeText = (e) => setText(e.target.value);
 
   // Function to change into uppercase
-  const handleUpCase = () => setText(text.toUpperCase());
+  const handleUpCase = () => {
+    setText(text.toUpperCase());
+    text === ""
+      ? showAlert("danger", "Enter something to convert")
+      : showAlert("success", "Converted to upper case");
+  };
 
   // Function to change into lowercase
-  const handleLowCase = () => setText(text.toLowerCase());
+  const handleLowCase = () => {
+    setText(text.toLowerCase());
+    text === ""
+      ? showAlert("danger", "Enter something to convert")
+      : showAlert("success", "Converted to lower case");
+  };
 
   // Function to clear text
-  const handleClearText = () => setText("");
+  const handleClearText = () => {
+    setText("");
+    text === ""
+      ? showAlert("danger", "Enter something to clear")
+      : showAlert("success", "Text cleared");
+  };
 
   // Function to copy text
-  const handleCopyText = () => navigator.clipboard.writeText(text);
+  const handleCopyText = () => {
+    navigator.clipboard.writeText(text);
+    text === ""
+      ? showAlert("danger", "Enter something to copy")
+      : showAlert("success", "Text copied");
+  };
 
   // Function to remove extra-spaces
   const handleExtraSpaces = () => {
-    let newText = text.split(/[ ]+/);
-    setText(newText.join(" ").trim());
+    let newText = text.split(/[ ]+/).join(" ").trim();
+    newText === text
+      ? showAlert("danger", "No white spaces")
+      : showAlert("success", "White space removed");
+    setText(newText);
   };
 
   return (
