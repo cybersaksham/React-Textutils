@@ -1,9 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function Form({ theme, showAlert }) {
-  // Declaring textarea value state
-  const [text, setText] = useState("");
-
+export default function Form({ theme, showAlert, text, setText }) {
   // Handling onChnage textarea event
   const handleChangeText = (e) => setText(e.target.value);
 
@@ -46,6 +43,30 @@ export default function Form({ theme, showAlert }) {
       ? showAlert("danger", "No white spaces")
       : showAlert("success", "White space removed");
     setText(newText);
+  };
+
+  // Function to replace text
+  const handleReplace = () => {
+    showModal({
+      title: "Replace text",
+      body: (
+        <form>
+          <div className="mb-3">
+            <label htmlFor="find" className="form-label">
+              Find
+            </label>
+            <input type="text" className="form-control" id="find" />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="replace" className="form-label">
+              Replace
+            </label>
+            <input type="text" className="form-control" id="replace" />
+          </div>
+        </form>
+      ),
+      saveBtn: null,
+    });
   };
 
   return (

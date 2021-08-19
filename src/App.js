@@ -1,6 +1,6 @@
+import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Form from "./components/Form";
-import React, { useState } from "react";
 import Alert from "./components/Alert";
 
 function App() {
@@ -14,6 +14,9 @@ function App() {
 
   // Alert states
   const [alert, setAlert] = useState(null);
+
+  // Text states
+  const [text, setText] = useState("");
 
   // Function to show alerts
   const showAlert = (type, msg) => {
@@ -75,7 +78,7 @@ function App() {
     <>
       <Navbar title="TextUtils" theme={theme} toggle={changeTheme} />
       <Alert alert={alert} />
-      <Form theme={theme} showAlert={showAlert} />
+      <Form theme={theme} showAlert={showAlert} text={text} setText={setText} />
     </>
   );
 }
