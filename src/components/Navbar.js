@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 export default function Navbar(props) {
   return (
     <nav
-      className={`navbar navbar-expand-lg navbar-${props.theme.nav} bg-${props.theme.nav}`}
+      className={`navbar navbar-expand-lg navbar-${props.theme.nav_fg} bg-${props.theme.nav_fg}`}
+      id="navbar"
     >
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
