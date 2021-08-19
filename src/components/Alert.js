@@ -9,8 +9,8 @@ export default function Alert(props) {
       >
         <strong>
           {props.alert.type.charAt(0).toUpperCase() + props.alert.type.slice(1)}
-        </strong>{": "}
-        {props.alert.msg}
+        </strong>
+        {": "} {props.alert.msg}
       </div>
     )
   );

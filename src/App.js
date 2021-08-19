@@ -24,9 +24,11 @@ function App() {
   // Function to show alerts
   const showAlert = (type, msg) => {
     setAlert({ type: type, msg: msg });
-    setTimeout(() => {
+    if (localStorage["timeout"] != null) clearTimeout(localStorage["timeout"]);
+    let s = setTimeout(() => {
       setAlert(null);
     }, 2000);
+    localStorage["timeout"] = s;
   };
 
   // Function to append style
