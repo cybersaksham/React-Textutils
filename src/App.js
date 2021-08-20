@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Form from "./components/Form";
 import Alert from "./components/Alert";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
   // Theme states
@@ -98,7 +99,7 @@ function App() {
   };
 
   return (
-    <>
+    <Router>
       <Navbar
         title="TextUtils"
         theme={theme}
@@ -107,8 +108,20 @@ function App() {
         changeColor={changeColor}
       />
       <Alert alert={alert} />
-      <Form theme={theme} showAlert={showAlert} text={text} setText={setText} />
-    </>
+      <Switch>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/">
+          <Form
+            theme={theme}
+            showAlert={showAlert}
+            text={text}
+            setText={setText}
+          />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
