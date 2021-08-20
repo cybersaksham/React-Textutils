@@ -1,6 +1,9 @@
 import React from "react";
 
-export default function About() {
+export default function About({ title }) {
+  // Changing title
+  document.title = title;
+
   return (
     <div className="container my-3">
       <h1>About</h1>

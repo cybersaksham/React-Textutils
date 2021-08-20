@@ -1,6 +1,9 @@
 import React from "react";
 
-export default function Form({ theme, showAlert, text, setText }) {
+export default function Form({ theme, showAlert, text, setText, title }) {
+  // Changing title
+  document.title = title;
+
   // Handling onChnage textarea event
   const handleChangeText = (e) => setText(e.target.value);
 

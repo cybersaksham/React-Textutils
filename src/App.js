@@ -111,10 +111,11 @@ function App() {
       <Alert alert={alert} />
       <Switch>
         <Route exact path="/about">
-          <About />
+          <About title="About" />
         </Route>
         <Route exact path="/">
           <Form
+            title="TextUtils"
             theme={theme}
             showAlert={showAlert}
             text={text}
