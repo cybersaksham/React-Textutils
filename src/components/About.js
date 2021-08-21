@@ -9,7 +9,6 @@ export default function About({ title }) {
       <h1>About</h1>
       <hr />
       <p>This is a simple textutils website made in react.</p>
-      <p>This webstie is made by saksham.</p>
     </div>
   );
 }
