@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/cybersaksham/React-Textutils/static/js/main.acb107c6.chunk.js",
+    "main.js.map": "/cybersaksham/React-Textutils/static/js/main.acb107c6.chunk.js.map",
+    "runtime-main.js": "/cybersaksham/React-Textutils/static/js/runtime-main.feb080f9.js",
+    "runtime-main.js.map": "/cybersaksham/React-Textutils/static/js/runtime-main.feb080f9.js.map",
+    "static/js/2.18af2cd2.chunk.js": "/cybersaksham/React-Textutils/static/js/2.18af2cd2.chunk.js",
+    "static/js/2.18af2cd2.chunk.js.map": "/cybersaksham/React-Textutils/static/js/2.18af2cd2.chunk.js.map",
+    "static/js/3.75684c19.chunk.js": "/cybersaksham/React-Textutils/static/js/3.75684c19.chunk.js",
+    "static/js/3.75684c19.chunk.js.map": "/cybersaksham/React-Textutils/static/js/3.75684c19.chunk.js.map",
+    "index.html": "/cybersaksham/React-Textutils/index.html",
+    "static/js/2.18af2cd2.chunk.js.LICENSE.txt": "/cybersaksham/React-Textutils/static/js/2.18af2cd2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.feb080f9.js",
+    "static/js/2.18af2cd2.chunk.js",
+    "static/js/main.acb107c6.chunk.js"
+  ]
+}
