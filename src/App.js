@@ -7,12 +7,16 @@ import About from "./components/About";
 
 function App() {
   // Theme states
-  const [theme, setTheme] = useState({
-    nav: "#eef3f3",
-    nav_fg: "light",
-    bg: "#ffffff",
-    fg: "black",
-  });
+  const [theme, setTheme] = useState(
+    sessionStorage.getItem("theme") == null
+      ? {
+          nav: "#eef3f3",
+          nav_fg: "light",
+          bg: "#ffffff",
+          fg: "black",
+        }
+      : JSON.parse(sessionStorage.theme)
+  );
 
   // Color state
   const [color, setColor] = useState(theme.bg);
@@ -91,6 +95,7 @@ function App() {
 
     setTheme(themeObj);
     appendStyle(themeObj);
+    sessionStorage.setItem("theme", JSON.stringify(themeObj));
   };
 
   // Function to change color
