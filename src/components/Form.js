@@ -59,7 +59,7 @@ export default function Form({ theme, showAlert, text, setText, title }) {
           onChange={handleChangeText}
           className="form-control"
           id="myText"
-          rows="10"
+          rows="7"
           placeholder="Enter here"
           style={{ backgroundColor: theme.bg, color: theme.fg }}
         ></textarea>
