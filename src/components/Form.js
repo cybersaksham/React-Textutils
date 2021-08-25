@@ -86,7 +86,7 @@ export default function Form({ theme, showAlert, text, setText, title }) {
         <h2>Summary</h2>
         <hr />
         <p>
-          {`${text.split(" ").filter((t) => t !== "").length} words & ${
+          {`${text.split(/\s+/).filter((t) => t !== "").length} words & ${
             text.length
           } letters`}
         </p>
